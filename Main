@@ -1,5 +1,11 @@
 local WPastGui = Instance.new("ScreenGui")
 coroutine.resume(coroutine.create(function()
+	-- GUI to Lua 
+	-- Version: 0.0.3
+
+	-- Instances:
+
+	
 	local MainFrame_1 = Instance.new("Frame")
 	local Title_1 = Instance.new("TextLabel")
 	local Version_1 = Instance.new("TextLabel")
@@ -17,8 +23,9 @@ coroutine.resume(coroutine.create(function()
 	local TitleCommands_1 = Instance.new("TextLabel")
 	local UICorner_4 = Instance.new("UICorner")
 
+	-- Properties:
 	WPastGui.Name = "WPastGui"
-	WPastGui.Parent = game.CoreGui
+	WPastGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 	MainFrame_1.Name = "MainFrame"
 	MainFrame_1.Parent = WPastGui
@@ -175,7 +182,7 @@ coroutine.resume(coroutine.create(function()
 	UICorner_4.Parent = MainFrame_1
 end))
 
-local function fQstVLDUvQODQVxH()
+local function OHSIpnJQrkXXdpmZ()
 local script = Instance.new("LocalScript",WPastGui)
 local ScreenGui = script.Parent
 local MainFrame = ScreenGui.MainFrame
@@ -226,11 +233,13 @@ UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
 		if input.KeyCode == Enum.KeyCode.K then
 			if UIEnabled == false then
 				UIEnabled = true
+				ShowCommandsButton.Modal = true
 				TweenService:Create(MainFrame, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out, 0, false, 0), {
 					Position = UDim2.new(0.005, 0,0.221, 0);
 				}):Play()
 			else
 				UIEnabled = false
+				ShowCommandsButton.Modal = false
 				if RandomUIEnabledNum == 1 then
 					TweenService:Create(MainFrame, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0), {
 						Position = UDim2.new(1, 0,0.221, 0);
@@ -326,4 +335,4 @@ end
 
 ShowCommandsButton.MouseButton1Click:Connect(CommandShow)
 end
-coroutine.wrap(fQstVLDUvQODQVxH)()
+coroutine.wrap(OHSIpnJQrkXXdpmZ)()
