@@ -1,0 +1,306 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local WPastGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Version = Instance.new("TextLabel")
+local CommandBox = Instance.new("TextBox")
+local UICorner = Instance.new("UICorner")
+local ShowCommandsButton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Commands = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local CmdTexts = Instance.new("TextLabel")
+local UIListLayout = Instance.new("UIListLayout")
+local TitleCommands = Instance.new("TextLabel")
+local UICorner_4 = Instance.new("UICorner")
+
+--Properties:
+
+WPastGui.Name = "WPastGui"
+WPastGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+WPastGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = WPastGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+MainFrame.BackgroundTransparency = 0.340
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(1, 0, 0.221000001, 0)
+MainFrame.Size = UDim2.new(0.99000001, 0, 0.0130000003, 42)
+MainFrame.ZIndex = 2
+
+Title.Name = "Title"
+Title.Parent = MainFrame
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.00530973449, 0, 0.180000007, 0)
+Title.Size = UDim2.new(0.260638297, 0, 0.639999986, 0)
+Title.Font = Enum.Font.IndieFlower
+Title.Text = "W-Past"
+Title.TextColor3 = Color3.fromRGB(250, 250, 250)
+Title.TextSize = 25.000
+Title.TextTransparency = 0.600
+
+Version.Name = "Version"
+Version.Parent = MainFrame
+Version.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Version.BackgroundTransparency = 1.000
+Version.Position = UDim2.new(0.750442445, 0, 0.180000007, 0)
+Version.Size = UDim2.new(0.244680852, 0, 0.639999986, 0)
+Version.Font = Enum.Font.IndieFlower
+Version.Text = "v0.0.1"
+Version.TextColor3 = Color3.fromRGB(250, 250, 250)
+Version.TextSize = 25.000
+Version.TextTransparency = 0.600
+
+CommandBox.Name = "CommandBox"
+CommandBox.Parent = MainFrame
+CommandBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CommandBox.BackgroundTransparency = 0.990
+CommandBox.BorderColor3 = Color3.fromRGB(27, 42, 53)
+CommandBox.Position = UDim2.new(0.352212399, 0, 0.180000007, 0)
+CommandBox.Size = UDim2.new(0.295212775, 0, 0.639999986, 0)
+CommandBox.Font = Enum.Font.IndieFlower
+CommandBox.PlaceholderColor3 = Color3.fromRGB(134, 134, 134)
+CommandBox.PlaceholderText = "Command"
+CommandBox.Text = ""
+CommandBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+CommandBox.TextSize = 25.000
+CommandBox.TextTransparency = 0.600
+CommandBox.TextWrapped = true
+
+UICorner.Parent = CommandBox
+
+ShowCommandsButton.Name = "ShowCommandsButton"
+ShowCommandsButton.Parent = MainFrame
+ShowCommandsButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ShowCommandsButton.BackgroundTransparency = 0.990
+ShowCommandsButton.Position = UDim2.new(0.654464304, 0, 0.180000007, 0)
+ShowCommandsButton.Size = UDim2.new(0, 32, 0, 32)
+ShowCommandsButton.Font = Enum.Font.Sarpanch
+ShowCommandsButton.Text = "?"
+ShowCommandsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ShowCommandsButton.TextSize = 26.000
+ShowCommandsButton.TextTransparency = 0.600
+ShowCommandsButton.TextWrapped = true
+
+UICorner_2.Parent = ShowCommandsButton
+
+Commands.Name = "Commands"
+Commands.Parent = MainFrame
+Commands.BackgroundColor3 = Color3.fromRGB(67, 67, 67)
+Commands.BackgroundTransparency = 0.340
+Commands.Position = UDim2.new(0.592000008, 0, 10, 0)
+Commands.Rotation = -180.000
+Commands.Size = UDim2.new(0.152678564, 0, 5.30000019, 0)
+Commands.ZIndex = 2
+
+UICorner_3.Parent = Commands
+
+ScrollingFrame.Parent = Commands
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0.0585841462, 0, 0.169811323, 0)
+ScrollingFrame.Size = UDim2.new(0.878762186, 0, 0.792452812, 0)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 4, 0)
+ScrollingFrame.ScrollBarThickness = 4
+ScrollingFrame.VerticalScrollBarInset = Enum.ScrollBarInset.Always
+ScrollingFrame.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
+
+CmdTexts.Name = "CmdTexts"
+CmdTexts.Parent = ScrollingFrame
+CmdTexts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CmdTexts.BackgroundTransparency = 1.000
+CmdTexts.Position = UDim2.new(0.0270813666, 0, 0, 0)
+CmdTexts.Size = UDim2.new(0, 124, 0, 21)
+CmdTexts.Visible = false
+CmdTexts.Font = Enum.Font.IndieFlower
+CmdTexts.Text = "Hola"
+CmdTexts.TextColor3 = Color3.fromRGB(255, 255, 255)
+CmdTexts.TextScaled = true
+CmdTexts.TextSize = 14.000
+CmdTexts.TextTransparency = 0.650
+CmdTexts.TextWrapped = true
+
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 5)
+
+TitleCommands.Name = "TitleCommands"
+TitleCommands.Parent = Commands
+TitleCommands.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TitleCommands.BackgroundTransparency = 1.000
+TitleCommands.Position = UDim2.new(0, 0, 0.0226415098, 0)
+TitleCommands.Size = UDim2.new(0.995930493, 0, 0.124528304, 0)
+TitleCommands.Font = Enum.Font.IndieFlower
+TitleCommands.Text = "Commands"
+TitleCommands.TextColor3 = Color3.fromRGB(255, 255, 255)
+TitleCommands.TextSize = 25.000
+TitleCommands.TextTransparency = 0.600
+TitleCommands.TextWrapped = true
+
+UICorner_4.Parent = MainFrame
+
+-- Scripts:
+
+local function VYZS_fake_script() -- WPastGui.Main 
+	local script = Instance.new('LocalScript', WPastGui)
+
+	local ScreenGui = script.Parent
+	local MainFrame = ScreenGui.MainFrame
+	local Commands = MainFrame.Commands
+	local CommandBox = MainFrame.CommandBox
+	local ShowCommandsButton = MainFrame.ShowCommandsButton
+	
+	local Player = game.Players.LocalPlayer
+	local UserInputService = game:GetService("UserInputService")
+	local TweenService = game:GetService("TweenService")
+	local RunService = game:GetService("RunService")
+	
+	local UIEnabled, RandomUIEnabledNum = false, 2
+	local CommandEnabled, RandomCommandNum = false, 2
+	
+	local CreatedPositions, CreatedNumbers = {}, 0
+	
+	local CommandList = {
+		"Create";
+		"Teleport";
+		"Delete";
+	}
+	
+	CommandBox.FocusLost:Connect(function(enter)
+		if enter then
+			if CommandBox.Text == CommandList[1] then
+				CreatedNumbers += 1
+				CreatedPositions[CreatedNumbers] = {CFrame = Player.Character.HumanoidRootPart.CFrame}
+			elseif CommandBox.Text == CommandList[2] then
+				if CreatedPositions[CreatedNumbers] then
+					Player.Character.HumanoidRootPart.CFrame = CreatedPositions[CreatedNumbers].CFrame
+				else
+					game:GetService("StarterGui"):SetCore("SendNotification", {Title = "W-Past"; Text = "There's no Created TeleportPoints yet."; Duration = 5})
+				end
+			elseif CommandBox.Text == CommandList[3] then
+				if CreatedPositions[CreatedNumbers] then
+					CreatedPositions[CreatedNumbers] = nil
+					CreatedNumbers -= 1
+				else
+					game:GetService("StarterGui"):SetCore("SendNotification", {Title = "W-Past"; Text = "There's no Created TeleportPoints yet."; Duration = 5})
+				end
+			end
+		end
+	end)
+	
+	UserInputService.InputBegan:Connect(function(input, gameProcessedEvent)
+		if not gameProcessedEvent then
+			if input.KeyCode == Enum.KeyCode.K then
+				if UIEnabled == false then
+					UIEnabled = true
+					TweenService:Create(MainFrame, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out, 0, false, 0), {
+						Position = UDim2.new(0.005, 0,0.221, 0);
+					}):Play()
+				else
+					UIEnabled = false
+					if RandomUIEnabledNum == 1 then
+						TweenService:Create(MainFrame, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0), {
+							Position = UDim2.new(1, 0,0.221, 0);
+						}):Play()
+						RandomUIEnabledNum = 2
+					elseif RandomUIEnabledNum == 2 then
+						TweenService:Create(MainFrame, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0), {
+							Position = UDim2.new(-1, 0,0.221, 0);
+						}):Play()
+						RandomUIEnabledNum = 1
+					end
+				end
+			elseif input.KeyCode == Enum.KeyCode.J then
+				if CreatedPositions[CreatedNumbers] then
+					Player.Character.HumanoidRootPart.CFrame = CreatedPositions[CreatedNumbers].CFrame
+				else
+					game:GetService("StarterGui"):SetCore("SendNotification", {Title = "W-Past"; Text = "There's no Created TeleportPoints yet."; Duration = 5})
+				end
+			end
+		end
+	end)
+	
+	local CreateCommandListText = function(tex) coroutine.resume(coroutine.create(function()
+			
+			local CmdTexts = Instance.new("TextLabel")
+			CmdTexts.Name = "CmdTexts"..tex
+			CmdTexts.Parent = Commands.ScrollingFrame
+			CmdTexts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			CmdTexts.BackgroundTransparency = 1.000
+			CmdTexts.Position = UDim2.new(0.0270813666, 0, 0, 0)
+			CmdTexts.Size = UDim2.new(0, 124, 0, 91)
+			CmdTexts.Visible = true
+			CmdTexts.Font = Enum.Font.IndieFlower
+			CmdTexts.Text = tex
+			CmdTexts.TextColor3 = Color3.fromRGB(255, 255, 255)
+			CmdTexts.TextScaled = true
+			CmdTexts.TextSize = 14.000
+			CmdTexts.TextTransparency = 1
+			CmdTexts.TextWrapped = true
+			TweenService:Create(CmdTexts, TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0), {
+				TextTransparency = 0.650;
+				Size = UDim2.new(0, 124, 0, 21)
+			}):Play()
+			
+		end))
+	end
+	
+	CommandShow = function()
+		if CommandEnabled == false then
+	
+			CommandEnabled = true
+			TweenService:Create(Commands, TweenInfo.new(1, Enum.EasingStyle.Back, Enum.EasingDirection.Out, 0, false, 0), {
+				Position = UDim2.new(0.592, 0,1.12, 0);
+				Rotation = 0
+			}):Play()
+			coroutine.resume(coroutine.create(function()
+				for i,v in pairs(CommandList) do wait(0.05)
+					CreateCommandListText(v)
+				end
+			end))
+		else
+	
+			CommandEnabled = false
+			if RandomCommandNum == 1 then
+				TweenService:Create(Commands, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0), {
+					Position = UDim2.new(0.592, 0,10, 0);
+					Rotation = 180
+				}):Play()
+				RandomCommandNum = 2
+			elseif RandomCommandNum == 2 then
+				TweenService:Create(Commands, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0), {
+					Position = UDim2.new(0.592, 0,10, 0);
+					Rotation = -180
+				}):Play()
+				RandomCommandNum = 1
+			end
+			coroutine.resume(coroutine.create(function()
+				for i,v in pairs(Commands.ScrollingFrame:GetChildren()) do wait(0.05)
+					if v:IsA("TextLabel") then
+						TweenService:Create(v, TweenInfo.new(0.5, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0), {
+							TextTransparency = 1;
+							Size = UDim2.new(0, 124, 0, 0)
+						}):Play()
+						coroutine.resume(coroutine.create(function()
+							wait(0.55)
+							v:Destroy()
+						end))
+					end
+				end
+			end))
+		end
+	end
+	
+	ShowCommandsButton.MouseButton1Click:Connect(CommandShow)
+end
+coroutine.wrap(VYZS_fake_script)()
